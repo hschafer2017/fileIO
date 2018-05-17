@@ -1,0 +1,4 @@
+Hello|goodbye
+France|paris
+Ireland|dublin
+Who is the president of the US?|donald trump 
