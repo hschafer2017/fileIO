@@ -6,13 +6,12 @@ MAXIMUM_QUEUE_SIZE = 0
 BUFFER_SIZE = 2048
 
 def respond(client_socket, client_ip_and_port):
-    initial_response = "Hi there, what's up?\n".encode()
-    client_socket.send(initial_response)
-
-    client_message = client_socket.recv(BUFFER_SIZE).decode()
-    echo_response = ("You said: " + client_message).encode()
-    client_socket.send(echo_response)
-
+# To Do - send headers, send html (with head and body)
+    request = client_socket.recv(BUFFER_SIZE).decode()
+    response_headers = "HTTP/1.1 200 OK \n\n ALL GOOD IN THE HOOD, MATE.\n"
+    response_body = "Your request was \n" + request
+    encoded_response = (response_headers + response_body).encode()
+    client_socket.send(encoded_response)
 
 def serverloop():
     listening_socket = socket.socket()
