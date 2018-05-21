@@ -1,4 +1,6 @@
 Hello|goodbye
 France|paris
 Ireland|dublin
-Who is the president of the US?|donald trump 
+Who is the president of the US?|trump
+What is the capital of Canada|ottawa
+In what month is your birthday?|mayWhat is your name? |Haley

@@ -1,6 +1,3 @@
-import random 
-import pprint
-
 def printMenu():
     print("Enter an Option:")
     print("1. Ask Questions")
@@ -20,14 +17,10 @@ def printMenu():
         f.close()
         for line in lines:
             question, answer = line.split('|')
-            newQ = random.sample(question,len(question))
-            print(newQ)
             guess = input(question + ': ').lower()
             if answer == guess:
                 score += 1
             else:
-                print("You Lost!")
-                print(score)
                 return None
         print(score)
             
@@ -35,10 +28,10 @@ def printMenu():
     elif options == "2": 
         print("Add your question")
         f = open('questions.txt', 'a')
-        questions = str(input("Enter the question: "))
-        question = f.write(questions + '|')
-        answers = str(input("Enter the answer: "))
-        question = f.write(answers +'\n')
+        questions = input("Enter the question: ")
+        question = str(f.write('\n' + questions + '|'))
+        answers = input("Enter the answer: ")
+        question = str(f.write(answers))
         f.close()
     
     elif options == "3": 
@@ -51,6 +44,3 @@ def printMenu():
     
         
 printMenu()
-
-#  Asking is read only 
-# Adding is appending 
